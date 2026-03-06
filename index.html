@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YassCode YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<h1>Salam!</h1>
-<p>Had site dyali.</p>
-</body>
+    <div class="background-elements">
+        <div class="glow-circle shape-1"></div>
+        <div class="glow-circle shape-2"></div>
+    </div>
 
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YassCode</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="gradient-text">Download YouTube Videos</h1>
+            <p>Convert and download your favorite videos in MP4 or MP3 format instantly.</p>
+        </header>
+
+        <section class="downloader-card glass-panel">
+            <div class="input-group">
+                <i class="fa-solid fa-link input-icon"></i>
+                <input type="text" id="video-url" placeholder="Paste YouTube video URL here..." autocomplete="off">
+                <button id="fetch-btn" class="btn-primary">
+                    <span class="btn-text">Start</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div id="error-message" class="alert error hidden">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="error-text">Invalid YouTube URL. Please try again.</span>
+            </div>
+
+            <div id="loading-indicator" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching video details...</p>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="video-info">
+                    <img id="video-thumbnail" src="" alt="Video Thumbnail" class="thumbnail">
+                    <h2 id="video-title" class="video-title">Video Title</h2>
+                </div>
+                
+                <div class="download-options">
+                    <h3>Available Formats</h3>
+                    <div class="button-group">
+                        <a id="btn-mp4" href="#" target="_blank" class="btn-download btn-video">
+                            <i class="fa-solid fa-video"></i> Download MP4 (Video)
+                        </a>
+                        <a id="btn-mp3" href="#" target="_blank" class="btn-download btn-audio">
+                            <i class="fa-solid fa-music"></i> Download MP3 (Audio)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 YassCode Downloader. For educational purposes.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
